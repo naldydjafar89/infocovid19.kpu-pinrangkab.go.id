@@ -1,0 +1,309 @@
+<title>Hacked by X.FR3DOM !</title> 
+
+<script type="text/javascript">
+
+var snowmax=35
+
+var snowcolor=new Array("#AAAACC","#DDDDFF","#CCCCDD","#F3F3F3","#F0FFFF")
+
+var snowtype=new Array("Arial Black","Arial Narrow","Times","Comic Sans MS")
+
+var snowletter="*"
+
+var sinkspeed=0.6
+
+var snowmaxsize=22
+
+var snowminsize=8
+
+var snowingzone=1
+
+// Do not edit below this line
+
+var snow=new Array()
+
+var marginbottom
+
+var marginright
+
+var timer
+
+var i_snow=0
+
+var x_mv=new Array();
+
+var crds=new Array();
+
+var lftrght=new Array();
+
+var browserinfos=navigator.userAgent 
+
+var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+
+var ns6=document.getElementById&&!document.all
+
+var opera=browserinfos.match(/Opera/)  
+
+var browserok=ie5||ns6||opera
+
+function randommaker(range) {			rand=Math.floor(range*Math.random())
+
+    return rand
+
+}
+
+function initsnow() {
+
+	if (ie5 || opera) {
+
+		marginbottom = document.body.clientHeight
+
+		marginright = document.body.clientWidth
+
+	}
+
+	else if (ns6) {
+
+		marginbottom = window.innerHeight
+
+		marginright = window.innerWidth
+
+	}
+
+	var snowsizerange=snowmaxsize-snowminsize
+
+	for (i=0;i<=snowmax;i++) {
+
+		crds[i] = 0;                      
+
+    	lftrght[i] = Math.random()*15;         
+
+    	x_mv[i] = 0.03 + Math.random()/10;
+
+		snow[i]=document.getElementById("s"+i)
+
+		snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+
+		snow[i].size=randommaker(snowsizerange)+snowminsize
+
+		snow[i].style.fontSize=snow[i].size
+
+		snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+
+		snow[i].sink=sinkspeed*snow[i].size/5
+
+		if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+
+		if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+
+		if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+
+		if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+
+		snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+
+		snow[i].style.left=snow[i].posx
+
+		snow[i].style.top=snow[i].posy
+
+	}
+
+	movesnow()}
+
+function movesnow() {
+
+	for (i=0;i<=snowmax;i++) {
+
+		crds[i] += x_mv[i];
+
+		snow[i].posy+=snow[i].sink
+
+		snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i]);
+
+		snow[i].style.top=snow[i].posy
+
+		
+
+		if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+
+			if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+
+			if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+
+			if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+
+			if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+
+			snow[i].posy=0
+
+		}
+
+	}
+
+	var timer=setTimeout("movesnow()",50)
+
+}
+
+for (i=0;i<=snowmax;i++) {
+
+	document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+
+}
+
+if (browserok) {
+
+	window.onload=initsnow
+
+}
+
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Just+Another+Hand" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Iceland" rel="stylesheet" type="text/css"> 
+
+<link rel="icon" type="image/png" href="https://1.bp.blogspot.com/-pi3te7XWuN4/Xvbe7k5UK3I/AAAAAAAAIes/D0oKLmXs21QMkQGn3iN-CHjAtFoU6c9-ACLcBGAsYHQ/s640/logo%2Bblog.png"/> <center> <style> @keyframes shake {   0% { transform: translate(1px, 1px) rotate(0deg); }   10% { transform: translate(-1px, -2px) rotate(-1deg); }   20% { transform: translate(-3px, 0px) rotate(1deg); }   30% { transform: translate(3px, 2px) rotate(0deg); }   40% { transform: translate(1px, -1px) rotate(1deg); }   50% { transform: translate(-1px, 2px) rotate(-1deg); }   60% { transform: translate(-3px, 1px) rotate(0deg); }   70% { transform: translate(3px, 1px) rotate(-1deg); }   80% { transform: translate(-1px, -1px) rotate(1deg); }   90% { transform: translate(1px, 2px) rotate(0deg); }   100% { transform: translate(1px, -2px) rotate(-1deg); } } .x{ 	  animation: shake 1s;   animation-iteration-count: infinite; 	font-family: 'Just Another Hand', cursive; 	font-size:58px; } .z{ 	font-family: 'PT Sans Narrow', cursive; 	font-size:20px; } </style> <body bgcolor='black'><font color='white'><pre>  </pre> <div class=x>Word! by X.FR3DOM  &#x1F494;</div><br><img src="https://l.top4top.io/p_18423k4rr0.jpg" height="300px" width="300px"><div class=z> <br>    Cheers:<br> VIRA GUA SAYANK SAMA LU GUA BIKIN INI BUAT NGEBUKTIIN GUA SAYANK SAMA LU LOPYU💓 </div>
+
+<br><font face="Iceland">
+
+<button class="lagu" onclick="play();liat();"><font face="Iceland" size="6" color="black" >Play Music	</font></button><audio id="lagu" src="https://e.top4top.io/m_1787krhoe3.mp3"></audio><br>
+
+<div id="clock" style="color: blue; font-family: Iceland; font-size: 100px;"></div><br>
+
+<font family="Iceland"> Friends : <br>NaldyXploit - Xenon404Ganss - Mr.Leloinconel403 <br> Sadboy404Ganss - Naldy007 - JokerXploit</div><br><br>
+
+<SCRIPT>
+
+farbbibliothek = new Array();
+
+farbbibliothek[0] = new Array("#FF0000","#FF1100","#FF2200","#FF3300","#FF4400","#FF5500","#FF6600","#FF7700","#FF8800","#FF9900","#FFaa00","#FFbb00","#FFcc00","#FFdd00","#FFee00","#FFff00","#FFee00","#FFdd00","#FFcc00","#FFbb00","#FFaa00","#FF9900","#FF8800","#FF7700","#FF6600","#FF5500","#FF4400","#FF3300","#FF2200","#FF1100");
+
+farbbibliothek[1] = new Array("#FF0000","#FFFFFF","#FFFFFF","#FF0000");
+
+farbbibliothek[2] = new Array("#FFFFFF","#FF0000","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF");
+
+farbbibliothek[3] = new Array("#FF0000","#FF4000","#FF8000","#FFC000","#FFFF00","#C0FF00","#80FF00","#40FF00","#00FF00","#00FF40","#00FF80","#00FFC0","#00FFFF","#00C0FF","#0080FF","#0040FF","#0000FF","#4000FF","#8000FF","#C000FF","#FF00FF","#FF00C0","#FF0080","#FF0040");
+
+farbbibliothek[4] = new Array("#FF0000","#EE0000","#DD0000","#CC0000","#BB0000","#AA0000","#990000","#880000","#770000","#660000","#550000","#440000","#330000","#220000","#110000","#000000","#110000","#220000","#330000","#440000","#550000","#660000","#770000","#880000","#990000","#AA0000","#BB0000","#CC0000","#DD0000","#EE0000");
+
+farbbibliothek[5] = new Array("#FF0000","#FF0000","#FF0000","#FFFFFF","#FFFFFF","#FFFFFF");
+
+farbbibliothek[6] = new Array("#FF0000","#FDF5E6");
+
+farben = farbbibliothek[4];
+
+function farbschrift()
+
+{
+
+for(var i=0 ; i<Buchstabe.length; i++)
+
+{
+
+document.all["a"+i].style.color=farben[i];
+
+}
+
+farbverlauf();
+
+}
+
+function string2array(text)
+
+{
+
+Buchstabe = new Array();
+
+while(farben.length<text.length)
+
+{
+
+farben = farben.concat(farben);
+
+}
+
+k=0;
+
+while(k<=text.length)
+
+{
+
+Buchstabe[k] = text.charAt(k);
+
+k++;
+
+}
+
+}
+
+function divserzeugen()
+
+{
+
+for(var i=0 ; i<Buchstabe.length; i++)
+
+{
+
+document.write("<span id='a"+i+"' class='a"+i+"'>"+Buchstabe[i] + "</span>");
+
+}
+
+farbschrift();
+
+}
+
+var a=1;
+
+function farbverlauf()
+
+{
+
+for(var i=0 ; i<farben.length; i++)
+
+{
+
+farben[i-1]=farben[i];
+
+}
+
+farben[farben.length-1]=farben[-1];
+
+setTimeout("farbschrift()",30);
+
+}
+
+//
+
+var farbsatz=1;
+
+function farbtauscher()
+
+{
+
+farben = farbbibliothek[farbsatz];
+
+while(farben.length<text.length)
+
+{
+
+farben = farben.concat(farben);
+
+}
+
+farbsatz=Math.floor(Math.random()*(farbbibliothek.length-0.0001));
+
+}
+
+setInterval("farbtauscher()",5000);
+
+text ='[+] W-  E - L - C - O - M[+]';//h
+
+text ='[!]Hutabohu Cyber Team[!]';//h
+
+string2array(text);
+
+divserzeugen();
+
+//document.write(text);
+
+</script></font>
